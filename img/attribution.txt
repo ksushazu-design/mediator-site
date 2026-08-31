@@ -1,0 +1,36 @@
+Unsplash Photo Attribution
+========================================
+Generated: 2026-08-31 17:24:41
+
+Photo: vLENm-coX5Y
+  Photographer: Candice Picard
+  Profile: https://unsplash.com/@candice_picard?utm_source=claude_skill&utm_medium=referral
+  Photo URL: https://unsplash.com/photos/vLENm-coX5Y?utm_source=claude_skill&utm_medium=referral
+  License: Unsplash License (https://unsplash.com/license)
+
+Photo: Gwt1uvaFLJU
+  Photographer: Vitaly Gariev
+  Profile: https://unsplash.com/@silverkblack?utm_source=claude_skill&utm_medium=referral
+  Photo URL: https://unsplash.com/photos/Gwt1uvaFLJU?utm_source=claude_skill&utm_medium=referral
+  License: Unsplash License (https://unsplash.com/license)
+
+Photo: pc7_NfY1lNI
+  Photographer: Vitaly Gariev
+  Profile: https://unsplash.com/@silverkblack?utm_source=claude_skill&utm_medium=referral
+  Photo URL: https://unsplash.com/photos/pc7_NfY1lNI?utm_source=claude_skill&utm_medium=referral
+  License: Unsplash License (https://unsplash.com/license)
+
+Photo: n2VvngfbXtU
+  Photographer: Quilia
+  Profile: https://unsplash.com/@heyquilia?utm_source=claude_skill&utm_medium=referral
+  Photo URL: https://unsplash.com/photos/n2VvngfbXtU?utm_source=claude_skill&utm_medium=referral
+  License: Unsplash License (https://unsplash.com/license)
+
+Photo: -8UEuVWA-Tk
+  Photographer: Priscilla Du Preez 🇨🇦
+  Profile: https://unsplash.com/@priscilladupreez?utm_source=claude_skill&utm_medium=referral
+  Photo URL: https://unsplash.com/photos/-8UEuVWA-Tk?utm_source=claude_skill&utm_medium=referral
+  License: Unsplash License (https://unsplash.com/license)
+
+Attribution format for use in projects:
+  Photo by [Photographer Name] on Unsplash
