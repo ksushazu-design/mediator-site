@@ -212,6 +212,35 @@ img { max-width: 100%; }
   filter: saturate(0.85) contrast(1.04) brightness(0.9);
   box-shadow: var(--shadow-soft);
 }
+.feature:nth-of-type(1) .f-photo img { height: 340px; }
+.feature:nth-of-type(2) .f-photo img { height: 425px; }
+.feature:nth-of-type(3) .f-photo img { height: 300px; }
+.feature:nth-of-type(4) .f-photo img { height: 405px; }
+.feature:not(.flip) .f-photo { transform: translateY(12px); }
+.feature.flip .f-photo { transform: translateY(-12px); }
+
+/* Каскад появления hero */
+.hero .eyebrow, .hero h1, .hero p.lede, .hero .cta-row, .hero .cta-note, .hero .chat {
+  opacity: 0; transform: translateY(14px);
+  animation: fade-up 0.9s var(--ease) forwards;
+}
+.hero .eyebrow { animation-delay: 0.05s; }
+.hero h1 { animation-delay: 0.14s; }
+.hero p.lede { animation-delay: 0.26s; }
+.hero .cta-row { animation-delay: 0.38s; }
+.hero .cta-note { animation-delay: 0.48s; }
+.hero .chat { animation-delay: 0.4s; }
+@keyframes fade-up { to { opacity: 1; transform: translateY(0); } }
+
+/* Scroll-reveal секций там, где браузер умеет (прогрессивное улучшение) */
+@supports (animation-timeline: view()) {
+  .feature, .try-box {
+    opacity: 0; transform: translateY(26px);
+    animation: fade-up 1ms linear both;
+    animation-timeline: view();
+    animation-range: entry 5% entry 42%;
+  }
+}
 
 /* Виньетка диалога: стекло поверх сцены */
 .chat {
@@ -258,6 +287,8 @@ img { max-width: 100%; }
   .feature { grid-template-columns: 1fr; gap: 22px; padding: 34px 0; }
   .feature.flip .f-text { order: 1; }
   .feature.flip .f-photo { order: 2; }
+  .feature:nth-of-type(n) .f-photo img { height: 290px; }
+  .feature:nth-of-type(n) .f-photo { transform: none; }
 }
 .f-num {
   display: inline-flex; align-items: center;
@@ -292,7 +323,9 @@ details { border-bottom: 1px solid var(--hairline-strong); padding: 6px 0; }
 summary {
   cursor: pointer; font-weight: 600; padding: 13px 0; list-style: none;
   display: flex; justify-content: space-between; gap: 16px; color: var(--text);
+  transition: color 200ms ease;
 }
+summary:hover { color: var(--sage-soft); }
 summary::after { content: "+"; color: var(--sage-soft); font-size: 22px; line-height: 1; }
 details[open] summary::after { content: "–"; }
 details p { color: var(--text); opacity: 0.82; margin-top: 0; }
@@ -363,5 +396,8 @@ footer a { color: var(--text-muted); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   .scene-base::before { animation: none !important; }
-  .bubble { opacity: 1; transform: none; }
+  .bubble, .feature, .try-box,
+  .hero .eyebrow, .hero h1, .hero p.lede, .hero .cta-row, .hero .cta-note, .hero .chat {
+    animation: none !important; opacity: 1 !important; transform: none !important;
+  }
 }
