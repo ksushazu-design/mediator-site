@@ -103,22 +103,19 @@ em.ac.ac-sage { color: var(--sage-dark); }
 .hero h1 { display: flex; flex-direction: column; align-items: center; gap: 8px; }
 .h1-top { font-size: clamp(3rem, 5.7vw, 5.125rem); font-weight: 600; letter-spacing: -0.03em; line-height: 1; }
 .h1-sub { font-size: clamp(1.9rem, 4vw, 3.6rem); font-weight: 500; letter-spacing: -0.025em; line-height: 1.06; max-width: 17em; }
-.hero-tag { font-family: var(--serif); font-size: clamp(1.05rem, 1.45vw, 1.3rem); line-height: 1.55; color: var(--head); max-width: 56em; margin: 30px auto 0; }
-.hero-tag em { font-style: italic; }
-.hero-lede { font-family: var(--serif); font-size: clamp(1.05rem, 1.5vw, 1.35rem); line-height: 1.5; color: var(--ink); max-width: 48em; margin: 14px auto 0; }
+.hero-lede { font-family: var(--serif); font-size: clamp(1.05rem, 1.5vw, 1.35rem); line-height: 1.55; color: var(--ink); max-width: 50em; margin: 30px auto 0; }
 .cta-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 24px; margin-top: 30px; }
 .cta-row .btn { min-width: 292px; }
 .hero-illu { display: block; width: min(100%, 600px); margin: 34px auto 0; }
 .privacy { max-width: 62em; margin: 22px auto 0; font-size: 1.02rem; color: var(--ink); }
 
 /* Каскад появления hero */
-.hero h1, .hero-tag, .hero-lede, .cta-row, .hero-illu, .privacy {
+.hero h1, .hero-lede, .cta-row, .hero-illu, .privacy {
   opacity: 0; transform: translateY(14px);
   animation: fade-up 0.9s var(--ease) forwards;
 }
 .hero h1 { animation-delay: 0.05s; }
-.hero-tag { animation-delay: 0.16s; }
-.hero-lede { animation-delay: 0.26s; }
+.hero-lede { animation-delay: 0.18s; }
 .cta-row { animation-delay: 0.36s; }
 .hero-illu { animation-delay: 0.42s; }
 .privacy { animation-delay: 0.55s; }
@@ -242,6 +239,30 @@ blockquote {
 .more a:hover { border-color: var(--head); transform: translateY(-1px); }
 .more a small { display: block; color: var(--terracotta-deep); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 3px; }
 
+/* Истории: карточки на главной и в хабе */
+.stories-section { padding: 36px 24px 24px; }
+.stories-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
+.stories-head p { max-width: 36em; margin-bottom: 0; }
+.stories { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 28px; }
+.story-card { display: block; text-decoration: none; color: var(--head); }
+.story-card .thumb { display: block; aspect-ratio: 16 / 10; border-radius: 16px; overflow: hidden; background: var(--tint-warm); margin-bottom: 14px; }
+.story-card .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 500ms var(--ease); }
+.story-card .thumb.contain img { object-fit: contain; padding: 7%; }
+.story-card:hover .thumb img { transform: scale(1.03); }
+.story-meta { display: block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); margin-bottom: 6px; }
+.story-title { display: block; font-family: var(--serif); font-weight: 500; font-size: 1.15rem; line-height: 1.3; letter-spacing: -0.01em; }
+.story-card:hover .story-title { color: var(--terracotta-deep); }
+.story-teaser { display: block; font-size: 0.95rem; line-height: 1.55; color: var(--soft); margin-top: 8px; }
+.hub { padding: 30px 0 20px; }
+.hub h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.025em; }
+.hub-lede { max-width: 40em; font-size: 1.1rem; color: var(--soft); margin: 14px 0 0; }
+.hub-grid { margin-top: 36px; }
+.hub-try { margin-top: 44px; }
+.crumbs { font-size: 0.85rem; margin: 0 0 10px; }
+.crumbs a { color: var(--soft); text-decoration: none; }
+.crumbs a:hover { color: var(--terracotta-deep); }
+.more-all { margin-top: 14px; }
+
 /* Адаптив */
 @media (max-width: 900px) {
   .nav-links { display: none; }
@@ -255,6 +276,8 @@ blockquote {
   .split { gap: 28px; }
   .split .chat { order: 2; }
   .cta-row .btn { min-width: 0; width: 100%; max-width: 360px; }
+  .stories { grid-template-columns: 1fr; gap: 22px; }
+  .stories-head { flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 600px) {
   body { font-size: 16px; }
@@ -262,7 +285,6 @@ blockquote {
   .topbar { padding: 14px 0; }
   .topbar .btn { padding: 8px 12px; font-size: 0.88rem; }
   .hero { padding: 20px 0 36px; }
-  .hero-tag br { display: none; }
   .band { padding-top: 12px; padding-bottom: 12px; }
   .band-inner { padding: 28px 20px; }
   .stats { gap: 12px; }
@@ -272,7 +294,7 @@ blockquote {
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-  .bubble, .hero h1, .hero-tag, .hero-lede, .cta-row, .hero-illu, .privacy, html.js .reveal {
+  .bubble, .hero h1, .hero-lede, .cta-row, .hero-illu, .privacy, html.js .reveal {
     animation: none !important; opacity: 1 !important; transform: none !important;
   }
 }

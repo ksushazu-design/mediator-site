@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://ksushazu-design.github.io/mediator-site/</loc><priority>1.0</priority></url>
-  <url><loc>https://ksushazu-design.github.io/mediator-site/kak-pomiritsya-posle-ssory/</loc></url>
-  <url><loc>https://ksushazu-design.github.io/mediator-site/postoyanno-ssorimsya/</loc></url>
-  <url><loc>https://ksushazu-design.github.io/mediator-site/muzh-molchit-posle-ssory/</loc></url>
-  <url><loc>https://ksushazu-design.github.io/mediator-site/kak-pravilno-ssoritsya/</loc></url>
-  <url><loc>https://ksushazu-design.github.io/mediator-site/kak-izvinitsya/</loc></url>
-  <url><loc>https://ksushazu-design.github.io/mediator-site/ai-mediator-dlya-pary/</loc></url>
+  <url><loc>https://ksushazu-design.github.io/mediator-site/</loc><lastmod>2026-09-02</lastmod><priority>1.0</priority></url>
+  <url><loc>https://ksushazu-design.github.io/mediator-site/istorii/</loc><lastmod>2026-09-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://ksushazu-design.github.io/mediator-site/muzh-molchit-posle-ssory/</loc><lastmod>2026-09-02</lastmod><priority>0.7</priority></url>
+  <url><loc>https://ksushazu-design.github.io/mediator-site/postoyanno-ssorimsya/</loc><lastmod>2026-09-02</lastmod><priority>0.7</priority></url>
+  <url><loc>https://ksushazu-design.github.io/mediator-site/kak-pomiritsya-posle-ssory/</loc><lastmod>2026-09-02</lastmod><priority>0.7</priority></url>
+  <url><loc>https://ksushazu-design.github.io/mediator-site/kak-izvinitsya/</loc><lastmod>2026-09-02</lastmod><priority>0.7</priority></url>
+  <url><loc>https://ksushazu-design.github.io/mediator-site/kak-pravilno-ssoritsya/</loc><lastmod>2026-09-02</lastmod><priority>0.7</priority></url>
+  <url><loc>https://ksushazu-design.github.io/mediator-site/ai-mediator-dlya-pary/</loc><lastmod>2026-09-02</lastmod><priority>0.7</priority></url>
 </urlset>

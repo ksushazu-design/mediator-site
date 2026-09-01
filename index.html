@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=tm3">
+<link rel="stylesheet" href="styles.css?v=tm5">
 <script>document.documentElement.classList.add('js');</script>
 <script type="application/ld+json">
 {
@@ -28,6 +28,62 @@
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB"}
 }
 </script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Партнёр увидит, что я написала?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Нет. Ваши сообщения читает только бот. Партнёру он их не покажет и не перескажет, даже близко к тексту. Про вас он расскажет бережно: не «она сказала то-то», а «возможно, ей сейчас одиноко»."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "А если партнёр откажется участвовать?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Начните без него. Бот поможет разобраться, что вас задело, и подготовиться к разговору. А позвать партнёра можно позже, когда будет готов, хоть через неделю."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Кто прав, бот скажет?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Нет. Из «кто прав» обычно вырастает второй раунд ссоры, а не примирение. Вместо этого бот объяснит, что происходит с каждым из вас. Часто уже этого хватает, чтобы злость отпустила."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Это замена психологу?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Нет. Бот помогает пережить конкретную ссору: понять, что случилось, и решиться на разговор. Если проблема глубже или в отношениях есть насилие, он прямо скажет, что здесь нужен живой специалист, и подскажет, куда обратиться."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Почему оплата звёздами Telegram?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Потому что так проще всего. Звёзды покупаются в пару нажатий прямо в Telegram, картой любой страны, поэтому подписка работает и в России, и в Беларуси. Один разбор в месяц бесплатный, дальше подписка: 250 звёзд за 30 дней. Платит только один, партнёр присоединяется бесплатно."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Это подходит только парам?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Нет, подойдёт любым двоим: с родителями, с подругой или с коллегой. Просто выберите тип отношений в начале."
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">К содержанию</a>
@@ -37,6 +93,7 @@
     <a class="brand" href="./">Медиатор<span>.</span></a>
     <div class="nav-links">
       <a href="#how">Как это работает</a>
+      <a href="istorii/">Истории</a>
       <a href="#faq">Вопросы</a>
     </div>
     <a class="btn btn-ghost" href="https://t.me/mediator_help_bot?start=ref_site">Открыть в Telegram</a>
@@ -46,13 +103,12 @@
 <header class="hero" id="main">
   <div class="wrap-wide">
     <h1><span class="h1-top">Бот-медиатор</span><span class="h1-sub">Помогает помириться, не выясняя, кто прав</span></h1>
-    <p class="hero-tag">Приватно • Беспристрастно • Первый разбор бесплатно, <em>а партнёру платить не нужно вообще.</em><br>Он молчит второй день? <em>Боту он расскажет: наедине и без «а ты сама».</em></p>
-    <p class="hero-lede">Каждый рассказывает боту свою версию, в своём чате. Бот читает обе, объясняет каждому, что на самом деле задело второго, и подсказывает фразу, с которой разговор пойдёт, а не сорвётся.</p>
+    <p class="hero-lede">Он молчит второй день, а любой разговор кончается новой ссорой? Расскажите боту, что случилось, своими словами и наедине. Партнёр расскажет свою версию отдельно, платить ему не нужно. Медиатор прочитает обе, объяснит каждому, что на самом деле задело второго, и подскажет фразу, с которой разговор пойдёт, а не сорвётся. Первый разбор бесплатный.</p>
     <div class="cta-row">
       <a class="btn btn-ghost" href="https://t.me/mediator_help_bot?start=ref_site"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 10 14"/><path d="m21 3-7 18-4-7-7-4 18-7z"/></svg>Разобрать ссору бесплатно</a>
       <a class="btn btn-ghost" href="#how">Как это работает</a>
     </div>
-    <img class="hero-illu" src="img/illu-hero.png" alt="Пара сидит на разных концах дивана, нейтральный медиатор позади распутывает нить между ними" width="1400" height="959" loading="eager">
+    <img class="hero-illu" src="img/illu-hero.png" fetchpriority="high" alt="Пара сидит на разных концах дивана, нейтральный медиатор позади распутывает нить между ними" width="1400" height="959" loading="eager">
     <p class="privacy"><strong>Сразу про приватность.</strong> Партнёр вашу переписку не видит, бот из неё ничего не пересказывает. Через неделю сессия удаляется сама, раньше можно стереть одной кнопкой в меню.</p>
   </div>
 </header>
@@ -145,13 +201,43 @@
         </details>
         <details>
           <summary>Почему оплата звёздами Telegram?</summary>
-          <p>Потому что так проще всего. Звёзды покупаются в пару нажатий прямо в Telegram, картой любой страны, поэтому подписка работает и в России, и в Беларуси. Платит только один, партнёр присоединяется бесплатно.</p>
+          <p>Потому что так проще всего. Звёзды покупаются в пару нажатий прямо в Telegram, картой любой страны, поэтому подписка работает и в России, и в Беларуси. Один разбор в месяц бесплатный, дальше подписка: 250 звёзд за 30 дней. Платит только один, партнёр присоединяется бесплатно.</p>
         </details>
         <details>
           <summary>Это подходит только парам?</summary>
           <p>Нет, подойдёт любым двоим: с родителями, с подругой или с коллегой. Просто выберите тип отношений в начале.</p>
         </details>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="stories-section reveal" id="stories">
+  <div class="inner">
+    <div class="stories-head">
+      <div>
+        <p class="eyebrow">#Истории</p>
+        <h2>Ссоры, в которых узнаёшь себя</h2>
+        <p>Что за ними стоит и с какой фразы начать разговор. Каждую можно разобрать с Медиатором.</p>
+      </div>
+      <a class="btn btn-ghost" href="istorii/">Все истории</a>
+    </div>
+    <div class="stories">
+      <a class="story-card" href="muzh-molchit-posle-ssory/">
+        <span class="thumb contain"><img src="img/illu-02.png" alt="" loading="lazy" width="900" height="900"></span>
+        <span class="story-meta">Пары · 6 минут</span>
+        <span class="story-title">Муж молчит после ссоры: почему он так делает и как начать разговор</span>
+      </a>
+      <a class="story-card" href="postoyanno-ssorimsya/">
+        <span class="thumb contain"><img src="img/illu-03.png" alt="" loading="lazy" width="900" height="900"></span>
+        <span class="story-meta">Пары · 6 минут</span>
+        <span class="story-title">Постоянно ссоримся по мелочам: что это значит и как разорвать круг</span>
+      </a>
+      <a class="story-card" href="kak-pomiritsya-posle-ssory/">
+        <span class="thumb contain"><img src="img/illu-04.png" alt="" loading="lazy" width="900" height="900"></span>
+        <span class="story-meta">Пары · 7 минут</span>
+        <span class="story-title">Как помириться после сильной ссоры, пока обида не застыла</span>
+      </a>
     </div>
   </div>
 </section>
