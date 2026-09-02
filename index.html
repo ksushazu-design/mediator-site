@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=tm6">
+<link rel="stylesheet" href="styles.css?v=tm7">
 <script>document.documentElement.classList.add('js');</script>
 <script type="application/ld+json">
 {
@@ -102,13 +102,15 @@
 
 <header class="hero" id="main">
   <div class="wrap-wide">
-    <h1><span class="h1-top">Бот-медиатор</span><span class="h1-sub">Помогает помириться, не выясняя, кто прав</span></h1>
+    <h1><span class="h1-top">Бот-медиатор</span><span class="h1-sub">Помогает <em class="hl">помириться</em>, не выясняя, кто прав</span></h1>
     <p class="hero-lede">Поссорились, и каждый уверен, что прав? Любой разговор превращается в новый раунд, а молчать уже невыносимо. Расскажите боту, что случилось, своими словами и наедине. Тот, с кем вы поссорились, расскажет свою версию отдельно и бесплатно. Медиатор прочитает обе, объяснит каждому, что на самом деле задело другого, и подскажет фразу, с которой разговор пойдёт, а не сорвётся.</p>
     <div class="cta-row">
       <a class="btn btn-ghost" href="https://t.me/mediator_help_bot?start=ref_site"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 10 14"/><path d="m21 3-7 18-4-7-7-4 18-7z"/></svg>Разобрать ссору бесплатно</a>
       <a class="btn btn-ghost" href="#how">Как это работает</a>
     </div>
-    <img class="hero-illu" src="img/illu-hero.png" fetchpriority="high" alt="Пара сидит на разных концах дивана, нейтральный медиатор позади распутывает нить между ними" width="1400" height="959" loading="eager">
+    <div class="hero-visual">
+      <img class="hero-illu" src="img/illu-hero.png" fetchpriority="high" alt="Пара сидит на разных концах дивана, нейтральный медиатор позади распутывает нить между ними" width="1400" height="959" loading="eager">
+    </div>
     <p class="privacy"><strong>Сразу про приватность.</strong> Партнёр вашу переписку не видит, бот из неё ничего не пересказывает. Через неделю сессия удаляется сама, раньше можно стереть одной кнопкой в меню.</p>
   </div>
 </header>
@@ -124,20 +126,25 @@
       </div>
       <img src="img/illu-01.png" alt="Нейтральный медиатор держит нити, ведущие к двум поссорившимся людям" width="900" height="900" loading="lazy">
     </div>
+    <ol class="steps">
+      <li><span class="num">1</span><span>Вы пишете боту, что случилось, своими словами</span></li>
+      <li><span class="num">2</span><span>Партнёр по вашей ссылке пишет свою версию, вас он не видит</span></li>
+      <li><span class="num">3</span><span>Бот сравнивает обе и подсказывает, с какой фразы начать</span></li>
+    </ol>
     <div class="squiggles" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="cards">
       <article class="card">
-        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"/><path d="M5 21h14"/><path d="M4 7h16"/><path d="M6.5 7 3 14a3.5 3.5 0 0 0 7 0L6.5 7z"/><path d="M17.5 7 14 14a3.5 3.5 0 0 0 7 0L17.5 7z"/></svg>
+        <div class="ico-wrap"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"/><path d="M5 21h14"/><path d="M4 7h16"/><path d="M6.5 7 3 14a3.5 3.5 0 0 0 7 0L6.5 7z"/><path d="M17.5 7 14 14a3.5 3.5 0 0 0 7 0L17.5 7z"/></svg></div>
         <h3>Не адвокат и не судья</h3>
         <p>Адвокат встанет на вашу сторону, судья решит, кто виноват. После обоих мириться только труднее. Бот вместо этого объясняет, что задело вас и что в тот момент творилось с тем, кто напротив.</p>
       </article>
       <article class="card">
-        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="m9 10 2 2 4-4"/></svg>
+        <div class="ico-wrap"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="m9 10 2 2 4-4"/></svg></div>
         <h3>Подбирает слова, когда своих нет</h3>
         <p>Раскладывает, что случилось и чего вам сейчас не хватает: извинения или чтобы просто выслушали. Даёт один маленький шаг на сегодня. А злое сообщение партнёру сначала покажите боту: он перепишет его так, чтобы вас услышали, а не хлопнули дверью.</p>
       </article>
       <article class="card">
-        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+        <div class="ico-wrap"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></div>
         <h3>Точку ставите вдвоём</h3>
         <p>Когда оба остынете, каждый напишет, к чему пришёл, и бот соберёт из этого общий итог. Назавтра спросит, получилось ли поговорить. А если одна и та же тема всплывает третий раз, скажет об этом прямо.</p>
       </article>
@@ -147,11 +154,12 @@
 
 <section class="privacy-row reveal">
   <div class="inner">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
     <div>
+      <div class="ico-wrap"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
       <h3>Что сказано боту, остаётся у бота</h3>
       <p>Пишите как есть, хоть капслоком. У партнёра свой чат, и ваши слова туда не попадают даже в пересказе. Присоединяется он по вашей ссылке за минуту. А если пока не готов, начните без него. Режим «разобраться самому» для этого и есть.</p>
     </div>
+    <img src="img/illu-lock.png" alt="Два телефона, у каждого свой замок и своё облачко переписки" width="900" height="900" loading="lazy">
   </div>
 </section>
 
@@ -166,7 +174,25 @@
     <div>
       <p class="eyebrow">#Чем отличается от ChatGPT</p>
       <h2>ChatGPT всегда на вашей стороне. Поэтому и не помогает.</h2>
-      <p>Обычная нейросеть слышит только вас, поэтому всегда соглашается: конечно, вы правы. Приятно, но мириться после этого не легче. Медиатор читает обе версии, поэтому поддакивать не может. У него другая задача: чтобы вы двое наконец услышали друг друга.</p>
+      <p>Обычная нейросеть слышит только вас, поэтому всегда соглашается. Медиатор читает обе версии, поэтому поддакивать не может: его задача, чтобы вы двое наконец услышали друг друга.</p>
+      <div class="compare">
+        <div>
+          <h4>Обычная нейросеть</h4>
+          <ul>
+            <li>Слышит только вашу версию</li>
+            <li>Соглашается: конечно, вы правы</li>
+            <li>Приятно, но мириться не легче</li>
+          </ul>
+        </div>
+        <div class="us">
+          <h4>Медиатор</h4>
+          <ul>
+            <li>Читает обе версии ссоры</li>
+            <li>Не ищет виноватых, объясняет обоих</li>
+            <li>Даёт фразу, с которой начать разговор</li>
+          </ul>
+        </div>
+      </div>
       <div class="stats">
         <div><b>2</b><span class="unit">версии</span><small>ссоры читает бот, не одну</small></div>
         <div><b>10</b><span class="unit">минут</span><small>до первого разбора</small></div>
@@ -243,11 +269,14 @@
 </section>
 
 <section class="band">
-  <div class="band-inner tint-sage center reveal">
-    <p class="eyebrow">Первый разбор бесплатный</p>
-    <h2 class="h-big">Молчать можно ещё неделю. Или разобраться за десять минут.</h2>
-    <p>Начать можно без партнёра, позовёте потом. Через десять минут станет понятно, что случилось и что с этим делать.</p>
-    <a class="btn" href="https://t.me/mediator_help_bot?start=ref_site">Разобрать ссору бесплатно</a>
+  <div class="band-inner cta reveal">
+    <div>
+      <p class="eyebrow">Первый разбор бесплатный</p>
+      <h2 class="h-big">Молчать можно ещё неделю. Или разобраться за десять минут.</h2>
+      <p>Начать можно без партнёра, позовёте потом. Через десять минут станет понятно, что случилось и что с этим делать.</p>
+      <a class="btn" href="https://t.me/mediator_help_bot?start=ref_site">Разобрать ссору бесплатно</a>
+    </div>
+    <img src="img/illu-cta.png" alt="Двое идут навстречу друг другу, между ними свободная нить без узлов" width="900" height="900" loading="lazy">
   </div>
 </section>
 
