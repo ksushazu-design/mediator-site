@@ -22,6 +22,7 @@ def widont(text):
     if len(last) > 14 or re.fullmatch(r'[\d.,%]+', last): return text
     idx = body.rstrip().rfind(' ')
     if idx < 0: return text
+    if NBSP in body[idx + 1:]: return text  # последняя пара уже склеена, повторный прогон ничего не меняет
     if len(body.rstrip()) - idx > 30: return text
     lead = body[:idx]; rest = body[idx + 1:]
     return lead + NBSP + rest + tail
