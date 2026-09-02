@@ -23,8 +23,14 @@ STYLE = ("Die-cut sticker style flat vector illustration, isolated on a fully tr
          "simple rounded people with dot eyes, tiny line mouths, small noses, sage or terracotta clothes. ")
 
 
-def generate(scene, key, size="1024x1024", quality="high"):
-    body = json.dumps({"model": "gpt-image-1", "prompt": STYLE + scene, "size": size, "quality": quality,
+STYLE_FLAT = ("Flat vector editorial illustration in the style of modern tech-startup websites: clean, thin, even black ink outlines; "
+              "flat solid color fills; no gradients, no textures, no grain, no shadows, no sticker outline, no backdrop (fully transparent PNG). "
+              "Simplified, slightly exaggerated proportions, minimal faces (dot eyes, small line mouths, small noses). "
+              "Skin is warm cream #FAF8F5. Palette strictly: sage green #7A9E7E, light sage #A8C4AB, muted clay terracotta #C4916E, "
+              "warm charcoal #1A1918 for outlines and hair, cream #FAF8F5; a striped shirt may alternate terracotta and cream. Absolutely no text. ")
+
+def generate(scene, key, size="1024x1024", quality="high", style="sticker"):
+    body = json.dumps({"model": "gpt-image-1", "prompt": (STYLE_FLAT if style == "flat" else STYLE) + scene, "size": size, "quality": quality,
                        "background": "transparent", "output_format": "png", "n": 1}).encode()
     req = urllib.request.Request("https://api.openai.com/v1/images/generations", data=body,
                                  headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
@@ -62,10 +68,11 @@ if __name__ == "__main__":
     name, scene = sys.argv[1], sys.argv[2]
     landscape = "--landscape" in sys.argv
     quality = "medium" if "--medium" in sys.argv else "high"
+    style = "flat" if "--flat" in sys.argv else "sticker"
     out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "img", name + ".png")
     if landscape:
-        img = clean(generate(scene, key, size="1536x1024", quality=quality), ratio=1400 / 959, width=1400)
+        img = clean(generate(scene, key, size="1536x1024", quality=quality, style=style), ratio=1400 / 959, width=1400)
     else:
-        img = clean(generate(scene, key, quality=quality))
+        img = clean(generate(scene, key, quality=quality, style=style))
     img.save(out, optimize=True)
     print("ok", os.path.normpath(out), os.path.getsize(out) // 1024, "KB")
