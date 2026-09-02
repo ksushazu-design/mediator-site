@@ -112,17 +112,20 @@ em.ac.ac-sage { color: var(--sage-dark); }
 .hero-lede { font-family: var(--serif); font-size: clamp(1.05rem, 1.5vw, 1.35rem); line-height: 1.55; color: var(--ink); max-width: 50em; margin: 30px auto 0; }
 .cta-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 24px; margin-top: 30px; }
 .cta-row .btn { min-width: 292px; }
+.cta-note { font-size: 0.92rem; color: var(--muted); margin: 14px auto 0; max-width: 40em; }
+.cta .cta-note { color: #FFE3CF; margin: 12px 0 0; }
 .hero-illu { position: relative; display: block; width: min(100%, 600px); margin: 0 auto; }
 .privacy { max-width: 62em; margin: 22px auto 0; font-size: 1.02rem; color: var(--ink); }
 
 /* Каскад появления hero */
-.hero h1, .hero-lede, .cta-row, .hero-visual, .privacy {
+.hero h1, .hero-lede, .cta-row, .hero .cta-note, .hero-visual, .privacy {
   opacity: 0; transform: translateY(14px);
   animation: fade-up 0.9s var(--ease) forwards;
 }
 .hero h1 { animation-delay: 0.05s; }
 .hero-lede { animation-delay: 0.18s; }
 .cta-row { animation-delay: 0.36s; }
+.hero .cta-note { animation-delay: 0.4s; }
 .hero-visual { animation-delay: 0.42s; }
 .privacy { animation-delay: 0.55s; }
 @keyframes fade-up { to { opacity: 1; transform: translateY(0); } }
@@ -299,6 +302,22 @@ blockquote {
 .crumbs a:hover { color: var(--terracotta-deep); }
 .more-all { margin-top: 14px; }
 
+/* Элементы историй: иллюстрация, коротко, фраза-старт, чат-пример */
+.story-hero { background: var(--tint-warm); border-radius: 24px; padding: 22px; margin: 22px 0 26px; display: flex; justify-content: center; }
+.story-hero.sage { background: var(--tint-sage); }
+.story-hero.cream { background: var(--cream); }
+.story-hero img { width: min(100%, 340px); height: auto; }
+.tldr { background: var(--cream); border-radius: 18px; padding: 18px 22px 16px; margin: 0 0 26px; }
+.tldr small { display: block; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.72rem; font-weight: 700; color: var(--terracotta-deep); margin-bottom: 6px; }
+.tldr ul { margin: 0; padding-left: 20px; }
+.tldr li { margin: 4px 0; color: var(--ink); }
+.phrase { background: var(--tint-sage); border-radius: 18px; padding: 18px 22px; margin: 22px 0; }
+.phrase small { display: block; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.72rem; font-weight: 700; color: var(--sage-dark); margin-bottom: 6px; }
+.phrase p { margin: 0; font-family: var(--serif); font-size: 1.12rem; line-height: 1.5; color: var(--head); }
+.article .chat { margin: 24px 0; }
+.article .bubble { animation: none; opacity: 1; transform: none; }
+.article .chat-caption { margin-top: 2px; }
+
 /* Адаптив */
 @media (max-width: 900px) {
   .nav-links { display: none; }
@@ -342,7 +361,7 @@ blockquote {
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-  .bubble, .hero h1, .hero-lede, .cta-row, .hero-visual, .privacy, html.js .reveal {
+  .bubble, .hero h1, .hero-lede, .cta-row, .hero .cta-note, .hero-visual, .privacy, html.js .reveal {
     animation: none !important; opacity: 1 !important; transform: none !important;
   }
 }
