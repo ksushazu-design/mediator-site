@@ -1,0 +1,20 @@
+{
+ "hub": {
+  "title": "Stories about fights and making up: real situations",
+  "desc": "A husband who goes quiet, a neighbor who doesn't, a friend who's hurt, a coworker who dumps work on you. What's behind each fight and how to start talking.",
+  "h1": "Fights you'll recognize yourself in",
+  "lead": "Not just couples: neighbors, friends, coworkers, parents. What sits behind each fight and the line to open the conversation with. Any of them you can work through with Mediator: you tell your side, the other person tells theirs, and the bot helps you hear each other."
+ },
+ "landing": {
+  "h2": "Fights you'll recognize yourself in",
+  "lead": "Not just couples: neighbors, friends, coworkers, parents. What sits behind the fight and the line to open with. Any of them you can work through with Mediator.",
+  "cards": [
+   "husband-silent-after-argument",
+   "upstairs-neighbor-noise-at-night",
+   "fight-with-best-friend",
+   "coworker-dumps-work-on-me",
+   "fight-with-my-mom",
+   "constantly-fighting-over-small-things"
+  ]
+ }
+}

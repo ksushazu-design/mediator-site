@@ -9,8 +9,10 @@ SHORT3 = 'что|как|для|при|про|без|над|под|все|всё|
 HANG = re.compile(r'(?<![\w-])((?:[а-яёА-ЯЁ]{1,2})|(?:' + SHORT3 + r'))[ \t]+(?=[«"(]?[а-яёА-ЯЁa-zA-Z0-9«(])')
 PARTICLE = re.compile(r'[ \t]+(же|ли|бы|б|ж)(?=[\s.,;:!?»)])')
 UNIT = re.compile(r'(\d+)[ \t]+(звёзд\w*|дней|дня|день|минут\w*|секунд\w*|час\w*|раз\w*|человек\w*|шаг\w*|правил\w*|верси\w*|процент\w*|лет|год\w*|недел\w*)')
+UNIT_EN = re.compile(r'(\d+)[ \t]+(min|minutes|hours|days|people)\b')
 TAG = re.compile(r'(<[^>]+>)')
 BLOCK_CLOSE = {'p', 'h1', 'h2', 'h3', 'h4', 'li', 'summary', 'span', 'figcaption', 'div', 'b', 'strong', 'em', 'a'}
+BLOCK_CLOSE_EN = {'h1', 'h2', 'h3', 'p', 'li', 'summary'}
 SKIP_OPEN = ('script', 'style', 'title', 'svg', 'pre', 'code', 'small')
 
 def widont(text):
@@ -27,7 +29,14 @@ def widont(text):
     lead = body[:idx]; rest = body[idx + 1:]
     return lead + NBSP + rest + tail
 
-def process(html):
+OPAQUE = re.compile(r'(<script\b.*?</script>|<style\b.*?</style>)', re.S | re.I)
+
+def process(html, lang='ru'):
+    chunks = OPAQUE.split(html)
+    return ''.join(c if i % 2 else process_chunk(c, lang) for i, c in enumerate(chunks))
+
+def process_chunk(html, lang='ru'):
+    block_close = BLOCK_CLOSE_EN if lang == 'en' else BLOCK_CLOSE
     parts = TAG.split(html)
     skip = None
     out = []
@@ -39,22 +48,31 @@ def process(html):
                 if part.startswith('</') and tag == skip: skip = None
             elif not part.startswith('</') and tag in SKIP_OPEN and not part.endswith('/>'):
                 skip = tag
-            elif part.startswith('</') and tag in BLOCK_CLOSE and out and (i - 1) % 2 == 0:
+            elif part.startswith('</') and tag in block_close and out and (i - 1) % 2 == 0:
                 prev = out[-1]
                 if prev.strip(): out[-1] = widont(prev)
             out.append(part)
         else:
             if skip or not part.strip():
                 out.append(part); continue
-            t = HANG.sub(lambda m: m.group(1) + NBSP, part)
-            t = PARTICLE.sub(lambda m: NBSP + m.group(1), t)
-            t = UNIT.sub(lambda m: m.group(1) + NBSP + m.group(2), t)
+            if lang == 'en':
+                t = UNIT_EN.sub(lambda m: m.group(1) + NBSP + m.group(2), part)
+            else:
+                t = HANG.sub(lambda m: m.group(1) + NBSP, part)
+                t = PARTICLE.sub(lambda m: NBSP + m.group(1), t)
+                t = UNIT.sub(lambda m: m.group(1) + NBSP + m.group(2), t)
             out.append(t)
     return ''.join(out)
 
 if __name__ == '__main__':
-    for f in sys.argv[1:]:
-        s = io.open(f, encoding='utf-8').read(); t = process(s)
+    args = sys.argv[1:]
+    lang = 'ru'
+    if '--lang' in args:
+        idx = args.index('--lang')
+        lang = args[idx + 1]
+        args = args[:idx] + args[idx + 2:]
+    for f in args:
+        s = io.open(f, encoding='utf-8').read(); t = process(s, lang)
         if t != s:
             io.open(f, 'w', encoding='utf-8').write(t)
         print(f, 'nbsp:', t.count(NBSP))
