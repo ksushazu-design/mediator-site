@@ -10,18 +10,19 @@ HANG = re.compile(r'(?<![\w-])((?:[а-яёА-ЯЁ]{1,2})|(?:' + SHORT3 + r'))[ \
 PARTICLE = re.compile(r'[ \t]+(же|ли|бы|б|ж)(?=[\s.,;:!?»)])')
 UNIT = re.compile(r'(\d+)[ \t]+(звёзд\w*|дней|дня|день|минут\w*|секунд\w*|час\w*|раз\w*|человек\w*|шаг\w*|правил\w*|верси\w*|процент\w*|лет|год\w*|недел\w*)')
 TAG = re.compile(r'(<[^>]+>)')
-BLOCK_CLOSE = {'p', 'h1', 'h2', 'h3', 'h4', 'li', 'summary', 'small', 'span', 'figcaption', 'div', 'b', 'strong', 'em', 'a'}
-SKIP_OPEN = ('script', 'style', 'title', 'svg', 'pre', 'code')
+BLOCK_CLOSE = {'p', 'h1', 'h2', 'h3', 'h4', 'li', 'summary', 'span', 'figcaption', 'div', 'b', 'strong', 'em', 'a'}
+SKIP_OPEN = ('script', 'style', 'title', 'svg', 'pre', 'code', 'small')
 
 def widont(text):
     m = re.match(r'^(.*?)(\s*)$', text, re.S)
     body, tail = m.group(1), m.group(2)
-    words = re.split(r'[ \t]+', body.strip())
+    words = re.split(r'[ \t\u00a0]+', body.strip())
     if len(words) < 3: return text
     last = words[-1]
     if len(last) > 14 or re.fullmatch(r'[\d.,%]+', last): return text
     idx = body.rstrip().rfind(' ')
     if idx < 0: return text
+    if len(body.rstrip()) - idx > 30: return text
     lead = body[:idx]; rest = body[idx + 1:]
     return lead + NBSP + rest + tail
 
