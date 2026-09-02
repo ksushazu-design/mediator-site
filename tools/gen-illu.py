@@ -61,10 +61,11 @@ if __name__ == "__main__":
     key = os.environ.get("OPENAI_API_KEY") or sys.exit("Нужна переменная OPENAI_API_KEY")
     name, scene = sys.argv[1], sys.argv[2]
     landscape = "--landscape" in sys.argv
+    quality = "medium" if "--medium" in sys.argv else "high"
     out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "img", name + ".png")
     if landscape:
-        img = clean(generate(scene, key, size="1536x1024"), ratio=1400 / 959, width=1400)
+        img = clean(generate(scene, key, size="1536x1024", quality=quality), ratio=1400 / 959, width=1400)
     else:
-        img = clean(generate(scene, key))
+        img = clean(generate(scene, key, quality=quality))
     img.save(out, optimize=True)
     print("ok", os.path.normpath(out), os.path.getsize(out) // 1024, "KB")
