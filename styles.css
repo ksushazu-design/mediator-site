@@ -38,7 +38,7 @@ body {
 
 ::selection { background: rgba(196, 112, 63, 0.22); color: var(--head); }
 
-.wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+.wrap { max-width: 820px; margin: 0 auto; padding: 0 20px; }
 .wrap-wide { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 .inner { max-width: 1200px; margin: 0 auto; }
 
@@ -299,7 +299,7 @@ blockquote {
 .story-teaser { display: block; font-size: 0.95rem; line-height: 1.55; color: var(--soft); margin-top: 8px; }
 .hub { padding: 30px 0 20px; }
 .hub h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.025em; }
-.hub-lede { max-width: 40em; font-size: 1.1rem; color: var(--soft); margin: 14px 0 0; }
+.hub-lede { max-width: none; font-size: 1.1rem; color: var(--soft); margin: 14px 0 0; }
 .hub-grid { margin-top: 36px; }
 .hub-try { margin-top: 44px; }
 .crumbs { font-size: 0.85rem; margin: 0 0 10px; }
